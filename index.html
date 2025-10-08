@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="pt-br" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vida em Pixel - Aventura Ecológica e Tecnológica</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        :root {
+            /* Paleta "Aventura na Floresta" ajustada para ecologia e tecnologia */
+            --color-primary: #00C49A; /* Verde Esmeralda: Ecologia, Crescimento, Natureza */
+            --color-secondary: #4DBCE9; /* Azul Oceano: Tecnologia, Céu, Água, Inovação */
+            --color-accent: #FFD700; /* Amarelo Vivo: Alegria, Sol, Destaque */
+            --color-tertiary: #FF8C42; /* Laranja Terra: Aventura, Biomas, Elementos Naturais */
+            --color-quaternary: #8A2BE2; /* Roxo Criativo: Magia, Digital, Gamificação */
+            
+            /* Cores de apoio e feedback */
+            --color-success: #00C49A; 
+            --color-warning: #FFD700; 
+            --color-danger: #FF3333; /* Vermelho Cereja (mantido para alerta) */
+            
+            /* Cores de texto - legibilidade e tema natural/tecnológico */
+            --color-text-main: #05b48e; /* Verde Floresta Escuro para títulos */
+            --color-text-light: #009bd8; /* Azul Marinho para textos e detalhes */
+            --color-text-on-dark: #FFFFFF; /* Branco puro para texto sobre cores escuras */
+            
+            /* Cores de fundo - leves e temáticas */
+            --color-background-light: #E0FFF8; /* Verde/Azul Pastel bem claro */
+            --color-background-neutral: #F5FFFA; /* Branco Esverdeado suave */
+            --color-background-white: #FFFFFF;
+            --color-background-dark: #03ac87; /* Verde Floresta Escuro para rodapé/seções escuras */
+            
+            /* Cores temáticas dos biomas - agora mais integradas com a paleta */
+            --color-amazonas: #05b48e; /* Verde Esmeralda */
+            --color-cerrado: #FF8C42; /* Laranja Terra */
+            --color-mata-atlantica: #4DBCE9; /* Azul Oceano */
+            
+            /* Cores para funcionalidades - reforçam o aspecto digital e lúdico */
+            --color-digital: #8A2BE2; /* Roxo Criativo */
+            --color-ar: #FFD700; /* Amarelo Vivo */
+            --color-vr: #4DBCE9; /* Azul Oceano */
+            --color-gamificacao: #00C49A; /* Verde Esmeralda */
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--color-background-light);
+            color: var(--color-text-light); /* Cor de texto padrão para o corpo */
+        }
+        
+        .text-gradient {
+            background-image: linear-gradient(to right, var(--color-primary), var(--color-secondary));
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+
+        .bg-primary { background-color: var(--color-primary); }
+        .text-primary { color: var(--color-primary); }
+        .hover-bg-primary:hover { background-color: var(--color-primary); }
+
+        .bg-secondary { background-color: var(--color-secondary); }
+        .text-secondary { color: var(--color-secondary); }
+        .hover-bg-secondary:hover { background-color: var(--color-secondary); }
+
+        .text-amazonas { color: var(--color-amazonas); }
+        .bg-amazonas { background-color: var(--color-amazonas); }
+        .border-amazonas { border-color: var(--color-amazonas); }
+
+        .text-cerrado { color: var(--color-cerrado); }
+        .bg-cerrado { background-color: var(--color-cerrado); }
+        .border-cerrado { border-color: var(--color-cerrado); }
+
+        .text-mata-atlantica { color: var(--color-mata-atlantica); }
+        .bg-mata-atlantica { background-color: var(--color-mata-atlantica); }
+        .border-mata-atlantica { border-color: var(--color-mata-atlantica); }
+
+        .text-gradient-logo {
+            background-image: linear-gradient(to right, var(--color-primary), var(--color-secondary));
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+    </style>
+</head>
+<body class="antialiased">
+
+    <header style="background-color: var(--color-background-light);" class="bg-white shadow-md p-4 sm:p-6 lg:p-8 sticky top-0 z-50">
+        <nav class="container mx-auto flex justify-between items-center flex-wrap">
+            <a href="#inicio" class="flex items-center space-x-2 font-bold text-2xl text-primary">
+                <img src="./imagens/logotipo_fundo_transparente.png" alt="Robô pixelizado segurando uma planta" class="h-20 w-20">
+                <span class="text-gradient-logo">Vida em Pixel</span>
+            </a>
+            <div class="hidden md:flex space-x-8 lg:space-x-12">
+                <a href="#kits" class="text-text-light hover:text-primary transition duration-300">Nossos Kits</a>
+                <a href="#missoes" class="text-text-light hover:text-secondary transition duration-300">Missões Incríveis</a>
+                <a href="#diferencial" class="text-text-light hover:text-tertiary transition duration-300">Super Poderes</a>
+                <a href="#fundadores" class="text-text-light hover:text-quaternary transition duration-300">Nossos Guardiões</a>
+                <a href="#depoimentos" class="text-text-light hover:text-primary transition duration-300">O que dizem sobre nós?</a>
+                <a href="#contato" class="text-text-light hover:text-primary transition duration-300">Fale Conosco</a>
+            </div>
+            <a href="#cta" class="bg-primary text-white font-semibold py-2 px-6 rounded-full shadow-lg hover:bg-emerald-700 transition duration-300 hidden md:block">Pegar meu Kit!</a>
+        </nav>
+    </header>
+
+    <main id="inicio" class="container mx-auto px-4 py-16 sm:py-24 text-center">
+        <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold leading-tight" style="color: var(--color-text-main);">
+            Descubra e Proteja a Natureza do Brasil: <span class="text-gradient">Sua Aventura Híbrida Começa Aqui!</span>
+        </h1>
+        <p class="text-lg sm:text-xl lg:text-2xl mt-4" style="color: var(--color-text-light);">
+            Pequenos ecossistemas, grandes missões. Transforme a ciência em uma aventura interativa e divertida, conectando-se com a natureza através dos kits Vida em Pixel.
+        </p>
+        <a href="#kits" id="cta-button" class="inline-block bg-primary text-white font-bold text-lg py-4 px-10 rounded-full shadow-2xl hover:bg-emerald-700 transition duration-300 transform hover:scale-105 mt-8">
+            Começar Minha Jornada Agora!
+        </a>
+    </main>
+    
+    <section id="demonstracao" class="bg-background-neutral py-16 sm:py-24">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl sm:text-4xl lg:text-5xl font-bold text-center mb-12" style="color: var(--color-text-main);">A Natureza Ganhando Vida</h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
+                <div class="flex flex-col items-center">
+                    <img src="./imagens/menina_casa.png" alt="Menina em casa com o kit" class="rounded-lg shadow-md mb-4 w-full">
+                    <p class="text-lg font-semibold" style="color: var(--color-text-light);">Aprenda a cuidar da natureza no conforto de casa, transformando seu quintal em um laboratório!</p>
+                </div>
+                <div class="flex flex-col items-center">
+                    <img src="./imagens/menina_escola.png" alt="Menina com o kit na escola" class="rounded-lg shadow-md mb-4 w-full">
+                    <p class="text-lg font-semibold" style="color: var(--color-text-light);">Leve a ciência e a tecnologia para a sala de aula e crie projetos incríveis em grupo.</p>
+                </div>
+                <div class="flex flex-col items-center">
+                    <img src="./imagens/menino_parque.png" alt="Menino com o kit em um parque" class="rounded-lg shadow-md mb-4 w-full">
+                    <p class="text-lg font-semibold" style="color: var(--color-text-light);">Explore a natureza em um parque, coletando dados e aprendendo sobre a vida real com a tecnologia.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="kits" class="bg-background-white py-16 sm:py-24">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl sm:text-4xl lg:text-5xl font-bold text-center mb-12" style="color: var(--color-text-main);">Seu Mundo de Descobertas Começa Aqui!</h2>
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="rounded-xl shadow-lg p-6 transform hover:-translate-y-2 transition duration-300" style="background-color: var(--color-background-light);">
+                    <div class="flex items-center justify-center mb-4">
+                        <img src="https://placehold.co/120x120/00C49A/fff?text=Amazônia" alt="Amazônia" class="rounded-full shadow-md border-4 border-amazonas">
+                    </div>
+                    <h3 class="text-2xl font-bold text-center text-amazonas mb-2">Kit Floresta Amazônica</h3>
+                    <p class="text-center" style="color: var(--color-text-light);">Crie seu próprio mini-habitat amazônico! Plante sementes, monitore a umidade, temperatura e luz com sensores de verdade.</p>
+                    <p class="text-center font-bold text-lg mt-4" style="color: var(--color-text-main);">R$ 149,90</p>
+                    <a href="pagina_de_compra.html?nome=Kit%20Floresta%20Amazônica&preco=149.90" 
+                    class="w-full mt-4 py-2 px-4 rounded-full font-semibold text-white bg-amazonas hover:bg-emerald-700 transition duration-300 text-center inline-block">
+                    Comprar Agora
+                    </a>
+                </div>
+                <div class="rounded-xl shadow-lg p-6 transform hover:-translate-y-2 transition duration-300" style="background-color: var(--color-background-light);">
+                    <div class="flex items-center justify-center mb-4">
+                           <img src="https://placehold.co/120x120/FF8C42/fff?text=Cerrado" alt="Cerrado" class="rounded-full shadow-md border-4 border-cerrado">
+                    </div>
+                    <h3 class="text-2xl font-bold text-center text-cerrado mb-2">Kit Savana Cerrado</h3>
+                    <p class="text-center" style="color: var(--color-text-light);">Explore a savana brasileira! Nossos kits simulam as condições ideais para a flora e fauna únicas do Cerrado.</p>
+                    <p class="text-center font-bold text-lg mt-4" style="color: var(--color-text-main);">R$ 139,90</p>
+                    <a href="pagina_de_compra.html?nome=Kit%20Savana%20Cerrado&preco=139.90" 
+                    class="w-full mt-4 py-2 px-4 rounded-full font-semibold text-white bg-amazonas hover:bg-emerald-700 transition duration-300 text-center inline-block">
+                    Comprar Agora
+                    </a>
+                </div>
+                <div class="rounded-xl shadow-lg p-6 transform hover:-translate-y-2 transition duration-300" style="background-color: var(--color-background-light);">
+                    <div class="flex items-center justify-center mb-4">
+                        <img src="https://placehold.co/120x120/4DBCE9/fff?text=Mata+Atlântica" alt="Mata Atlântica" class="rounded-full shadow-md border-4 border-mata-atlantica">
+                    </div>
+                    <h3 class="text-2xl font-bold text-center text-mata-atlantica mb-2">Kit Mata Atlântica</h3>
+                    <p class="text-center" style="color: var(--color-text-light);">Mergulhe na biodiversidade costeira! Veja como a vida prospera com seus cuidados e dados em tempo real.</p>
+                    <p class="text-center font-bold text-lg mt-4" style="color: var(--color-text-main);">R$ 159,90</p>
+                    <a href="pagina_de_compra.html?nome=Kit%20Mata%20Atlântica&preco=159.90" 
+                    class="w-full mt-4 py-2 px-4 rounded-full font-semibold text-white bg-amazonas hover:bg-emerald-700 transition duration-300 text-center inline-block">
+                    Comprar Agora
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="missoes" class="py-16 sm:py-24" style="background-color: var(--color-background-neutral);">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl sm:text-4xl lg:text-5xl font-bold text-center mb-12" style="color: var(--color-text-main);">Sua Aventura de Aprendizado Híbrida!</h2>
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+                <div class="rounded-xl shadow-lg p-6 text-center transform hover:scale-105 transition duration-300" style="background-color: var(--color-background-white);">
+                    <div class="mb-4">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-16 w-16 mx-auto text-digital" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M12 2a10 10 0 0 0-9.25 10.75A10 10 0 0 0 12 22a10 10 0 0 0 9.25-10.75A10 10 0 0 0 12 2zm0 10.75a3.25 3.25 0 1 1 0-6.5 3.25 3.25 0 0 1 0 6.5z"/>
+                            <path d="M12 18.25a6.25 6.25 0 1 0 0-12.5 6.25 6.25 0 0 0 0 12.5z"/>
+                        </svg>
+                    </div>
+                    <h3 class="text-2xl font-bold text-digital mb-2">Plataforma Digital Divertida</h3>
+                    <p style="color: var(--color-text-light);">Conecte seu kit ao nosso app para desbloquear missões, jogos e painéis interativos sobre a natureza.</p>
+                </div>
+                <div class="rounded-xl shadow-lg p-6 text-center transform hover:scale-105 transition duration-300" style="background-color: var(--color-background-white);">
+                    <div class="mb-4">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-16 w-16 mx-auto text-ar" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M12 2a10 10 0 0 0-9.25 10.75A10 10 0 0 0 12 22a10 10 0 0 0 9.25-10.75A10 10 0 0 0 12 2zm0 10.75a3.25 3.25 0 1 1 0-6.5 3.25 3.25 0 0 1 0 6.5z"/>
+                            <path d="M12 18.25a6.25 6.25 0 1 0 0-12.5 6.25 6.25 0 0 0 0 12.5z"/>
+                        </svg>
+                    </div>
+                    <h3 class="text-2xl font-bold text-ar mb-2">Realidade Aumentada (AR) Mágica</h3>
+                    <p style="color: var(--color-text-light);">Veja plantas e animais digitais ganharem vida e interagirem com seu kit físico na tela!</p>
+                </div>
+                <div class="rounded-xl shadow-lg p-6 text-center transform hover:scale-105 transition duration-300" style="background-color: var(--color-background-white);">
+                    <div class="mb-4">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-16 w-16 mx-auto text-vr" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M12 2a10 10 0 0 0-9.25 10.75A10 10 0 0 0 12 22a10 10 0 0 0 9.25-10.75A10 10 0 0 0 12 2zm0 10.75a3.25 3.25 0 1 1 0-6.5 3.25 3.25 0 0 1 0 6.5z"/>
+                            <path d="M12 18.25a6.25 6.25 0 1 0 0-12.5 6.25 6.25 0 0 0 0 12.5z"/>
+                        </svg>
+                    </div>
+                    <h3 class="text-2xl font-bold text-vr mb-2">Realidade Virtual (VR) Imersiva</h3>
+                    <p style="color: var(--color-text-light);">Entre nos biomas brasileiros em 360° para uma experiência de aprendizado imersiva e inesquecível.</p>
+                </div>
+                <div class="rounded-xl shadow-lg p-6 text-center transform hover:scale-105 transition duration-300" style="background-color: var(--color-background-white);">
+                    <div class="mb-4">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-16 w-16 mx-auto text-gamificacao" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M12 2a10 10 0 0 0-9.25 10.75A10 10 0 0 0 12 22a10 10 0 0 0 9.25-10.75A10 10 0 0 0 12 2zm0 10.75a3.25 3.25 0 1 1 0-6.5 3.25 3.25 0 0 1 0 6.5z"/>
+                            <path d="M12 18.25a6.25 6.25 0 1 0 0-12.5 6.25 6.25 0 0 0 0 12.5z"/>
+                        </svg>
+                    </div>
+                    <h3 class="2xl font-bold text-gamificacao mb-2">Gamificação de Exploração</h3>
+                    <p style="color: var(--color-text-light);">Complete missões, ganhe badges de protetor da natureza e suba no ranking para se tornar um Guardião da Biodiversidade!</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="diferencial" class="bg-background-light py-16 sm:py-24">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl sm:text-4xl lg:text-5xl font-bold text-center mb-12" style="color: var(--color-text-main);">Nossos Super Poderes para o Planeta</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <div class="flex flex-col items-center bg-background-white rounded-lg p-6 shadow-md text-center">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-12 w-12 text-secondary mb-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M12 2a10 10 0 0 0-9.25 10.75A10 10 0 0 0 12 22a10 10 0 0 0 9.25-10.75A10 10 0 0 0 12 2zm0 10.75a3.25 3.25 0 1 1 0-6.5 3.25 3.25 0 0 1 0 6.5z"/>
+                        <path d="M12 18.25a6.25 6.25 0 1 0 0-12.5 6.25 6.25 0 0 0 0 12.5z"/>
+                    </svg>
+                    <h3 class="text-xl font-semibold mb-2" style="color: var(--color-text-main);">Conecta Mundos Ecológicos</h3>
+                    <p style="color: var(--color-text-light);">Integra kits físicos e sensores com a plataforma digital para uma experiência híbrida única e conectada com a natureza.</p>
+                </div>
+                <div class="flex flex-col items-center bg-background-white rounded-lg p-6 shadow-md text-center">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-12 w-12 text-accent mb-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M12 2a10 10 0 0 0-9.25 10.75A10 10 0 0 0 12 22a10 10 0 0 0 9.25-10.75A10 10 0 0 0 12 2zm0 10.75a3.25 3.25 0 1 1 0-6.5 3.25 3.25 0 0 1 0 6.5z"/>
+                        <path d="M12 18.25a6.25 6.25 0 1 0 0-12.5 6.25 6.25 0 0 0 0 12.5z"/>
+                    </svg>
+                    <h3 class="text-xl font-semibold mb-2" style="color: var(--color-text-main);">IA Guia Inteligente</h3>
+                    <p style="color: var(--color-text-light);">Nossa IA personaliza o aprendizado e fornece feedback em tempo real para seu filho se tornar um explorador.</p>
+                </div>
+                <div class="flex flex-col items-center bg-background-white rounded-lg p-6 shadow-md text-center">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-12 w-12 text-tertiary mb-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M12 2a10 10 0 0 0-9.25 10.75A10 10 0 0 0 12 22a10 10 0 0 0 9.25-10.75A10 10 0 0 0 12 2zm0 10.75a3.25 3.25 0 1 1 0-6.5 3.25 3.25 0 0 1 0 6.5z"/>
+                        <path d="M12 18.25a6.25 6.25 0 1 0 0-12.5 6.25 6.25 0 0 0 0 12.5z"/>
+                    </svg>
+                    <h3 class="text-xl font-semibold mb-2" style="color: var(--color-text-main);">Ciência de Dados Verde</h3>
+                    <p style="color: var(--color-text-light);">Ensine ciência de dados e sustentabilidade com dados ambientais reais coletados pelos seus sensores.</p>
+                </div>
+                <div class="flex flex-col items-center bg-background-white rounded-lg p-6 shadow-md text-center">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-12 w-12 text-quaternary mb-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M12 2a10 10 0 0 0-9.25 10.75A10 10 0 0 0 12 22a10 10 0 0 0 9.25-10.75A10 10 0 0 0 12 2zm0 10.75a3.25 3.25 0 1 1 0-6.5 3.25 3.25 0 0 1 0 6.5z"/>
+                        <path d="M12 18.25a6.25 6.25 0 1 0 0-12.5 6.25 6.25 0 0 0 0 12.5z"/>
+                    </svg>
+                    <h3 class="text-xl font-semibold mb-2" style="color: var(--color-text-main);">Jornada de Preservação</h3>
+                    <p style="color: var(--color-text-light);">Gamificação e missões semanais garantem que o aprendizado sobre o meio ambiente seja uma diversão constante.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="fundadores" class="py-16 sm:py-24" style="background-color: var(--color-background-neutral);">
+        <div class="container mx-auto px-4 text-center">
+            <h2 class="text-3xl sm:text-4xl lg:text-5xl font-bold mb-12" style="color: var(--color-text-main);">Nossos Guardiões da Natureza</h2>
+            <p class="text-lg mb-12 max-w-3xl mx-auto" style="color: var(--color-text-light);">Conheça a equipe por trás da Vida em Pixel, apaixonada por educação, tecnologia e, acima de tudo, pela sustentabilidade e preservação do nosso planeta.</p>
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-12">
+                <div class="bg-background-white rounded-lg shadow-xl p-8 transform hover:scale-105 transition duration-300">
+                    <img src="https://placehold.co/150x150/00C49A/fff?text=Fundadora+1" alt="Foto do Fundadora 1" class="rounded-full w-36 h-36 mx-auto mb-4 object-cover border-4 border-amazonas">
+                    <h3 class="text-2xl font-bold mb-2" style="color: var(--color-text-main);">Alanis Urquisa Dias Moreira</h3>
+                    <p class="text-tertiary font-semibold mb-2">Exploradora Chefe & Visionária</p>
+                    <p style="color: var(--color-text-light);">Sua paixão por ciência de dados e IA se conecta à educação, tornando a tecnologia acessível a todos. Atua como voluntária em iniciativas extensionistas, desenvolvedora python e pesquisadora científica, levando conhecimento de forma prática e transformadora.</p></div>
+                <div class="bg-background-white rounded-lg shadow-xl p-8 transform hover:scale-105 transition duration-300">
+                    <img src="https://placehold.co/150x150/4DBCE9/fff?text=Fundadora+2" alt="Foto da Fundadora 2" class="rounded-full w-36 h-36 mx-auto mb-4 object-cover border-4 border-mata-atlantica">
+                    <h3 class="text-2xl font-bold mb-2" style="color: var(--color-text-main);">Maria Eduarda de Lima</h3>
+                    <p class="text-tertiary font-semibold mb-2">Mestra da Tecnologia</p>
+                    <p style="color: var(--color-text-light);">Com foco em ciência de dados e programação, ela desvenda a complexidade dos algoritmos com programação python. Seu interesse em tecnologia espacial mostra como a inovação pode alcançar novos horizontes.</p></div>
+                <div class="bg-background-white rounded-lg shadow-xl p-8 transform hover:scale-105 transition duration-300">
+                    <img src="https://placehold.co/150x150/FF8C42/fff?text=Fundador+3" alt="Foto do Fundador 3" class="rounded-full w-36 h-36 mx-auto mb-4 object-cover border-4 border-cerrado">
+                    <h3 class="text-2xl font-bold mb-2" style="color: var(--color-text-main);">Matheus Pereira Fortunato</h3>
+                    <p class="text-tertiary font-semibold mb-2">Arquiteto de Dados e Lógica</p>
+                    <p style="color: var(--color-text-light);">Ele é o alicerce matemático da equipe, dominando a lógica e a estatística que sustentam a ciência de dados. Sua expertise garante a precisão e a solidez de nossas soluções.</p>
+                </div>
+                <div class="bg-background-white rounded-lg shadow-xl p-8 transform hover:scale-105 transition duration-300">
+                    <img src="https://placehold.co/150x150/8A2BE2/fff?text=Fundador+4" alt="Foto da Fundador 4" class="rounded-full w-36 h-36 mx-auto mb-4 object-cover border-4 border-quaternary">
+                    <h3 class="text-2xl font-bold mb-2" style="color: var(--color-text-main);">Nicolas de Souza Ocampos</h3>
+                    <p class="text-quaternary font-semibold mb-2">Arquiteto de Sistemas e Soluções</p>
+                    <p style="color: var(--color-text-light);">Desenvolvedor de software, ele constrói as pontes tecnológicas que conectam as ideias às soluções.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="depoimentos" class="bg-background-light py-16 sm:py-24">
+        <div class="container mx-auto px-4 text-center">
+            <h2 class="text-3xl sm:text-4xl lg:text-5xl font-bold mb-12" style="color: var(--color-text-main);">O que nossos Clientes dizem sobre nós?</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="bg-background-white p-8 rounded-lg shadow-lg">
+                    <img src="https://placehold.co/80x80/FF8C42/fff?text=Clara" alt="Foto da Clara" class="rounded-full mx-auto mb-4 object-cover">
+                    <p class="italic text-lg mb-4" style="color: var(--color-text-light);">"O kit da Amazônia foi a melhor compra que já fiz para o meu filho! Ele está totalmente engajado e aprendeu muito sobre sustentabilidade sem nem perceber. É incrível como a tecnologia pode ser usada para o bem!"</p>
+                    <p class="font-bold" style="color: var(--color-text-main);">Clara, mãe do Lucas (8 anos)</p>
+                </div>
+                <div class="bg-background-white p-8 rounded-lg shadow-lg">
+                    <img src="https://placehold.co/80x80/00C49A/fff?text=Pedro" alt="Foto do Pedro" class="rounded-full mx-auto mb-4 object-cover">
+                    <p class="italic text-lg mb-4" style="color: var(--color-text-light);">"Eu sempre tive curiosidade por programação e meio ambiente, e esse kit uniu as duas coisas de um jeito que nunca imaginei! O aplicativo é muito legal, e a realidade aumentada é demais. Me sinto um cientista de verdade!"</p>
+                    <p class="font-bold" style="color: var(--color-text-main);">Pedro (12 anos)</p>
+                </div>
+                <div class="bg-background-white p-8 rounded-lg shadow-lg">
+                    <img src="https://placehold.co/80x80/4DBCE9/fff?text=Ana" alt="Foto da Professora Ana" class="rounded-full mx-auto mb-4 object-cover">
+                    <p class="italic text-lg mb-4" style="color: var(--color-text-light);">"Utilizamos os kits na nossa escola e a experiência foi fantástica. Os alunos ficaram super motivados e foi a forma mais eficaz de ensinar sobre biomas, dados e tecnologia. Recomendo para todas as escolas que buscam inovação na educação!"</p>
+                    <p class="font-bold" style="color: var(--color-text-main);">Professora Ana, Escola Inovadora</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contato" class="bg-background-neutral py-16 sm:py-24">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl sm:text-4xl lg:text-5xl font-bold text-center mb-12" style="color: var(--color-text-main);">Fale Conosco</h2>
+            <div class="max-w-xl mx-auto bg-background-white p-8 rounded-lg shadow-xl">
+                <form action="#" method="POST">
+                    <div class="mb-6">
+                        <label for="nome" class="block text-text-main font-semibold mb-2">Seu Nome</label>
+                        <input type="text" id="nome" name="nome" class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-primary" required>
+                    </div>
+                    <div class="mb-6">
+                        <label for="email" class="block text-text-main font-semibold mb-2">Seu Email</label>
+                        <input type="email" id="email" name="email" class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-primary" required>
+                    </div>
+                    <div class="mb-6">
+                        <label for="mensagem" class="block text-text-main font-semibold mb-2">Sua Mensagem</label>
+                        <textarea id="mensagem" name="mensagem" rows="5" class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-primary" required></textarea>
+                    </div>
+                    <div class="text-center">
+                        <button type="submit" class="bg-primary text-white font-bold py-3 px-8 rounded-full shadow-lg hover:bg-emerald-700 transition duration-300 transform hover:scale-105">Enviar Mensagem</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <section id="cta" class="bg-primary text-white py-16 sm:py-24 text-center">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl sm:text-4xl lg:text-5xl font-bold mb-6">A aventura de preservar a natureza espera por você!</h2>
+            <p class="text-lg sm:text-xl mb-8 max-w-2xl mx-auto">
+                Leve para casa um pedacinho da Amazônia, Cerrado, Mata Atlântica e de outras regiões do Brasil e comece a aprender de forma única, divertida e consciente.
+            </p>
+            <a href="#kits" class="inline-block bg-accent text-text-main font-bold text-lg py-4 px-10 rounded-full shadow-2xl hover:bg-yellow-500 transition duration-300 transform hover:scale-105">
+                Quero Ser um Guardião da Natureza!
+            </a>
+        </div>
+    </section>
+
+    <footer class="py-10" style="background-color: var(--color-background-dark); color: var(--color-text-on-dark);">
+        <div class="container mx-auto px-4 text-center">
+            <p class="mb-2">&copy; 2025 Vida em Pixel. Todos os direitos reservados. Plantando o futuro, pixel por pixel.</p>
+            <div class="flex justify-center space-x-4">
+                <a href="#" class="hover:text-accent transition duration-300">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" viewBox="0 0 24 24" fill="currentColor"><path d="M22.46 6c-.77.34-1" /></svg>
+                </a>
+                <a href="#" class="hover:text-accent transition duration-300">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" viewBox="0 0 24 24" fill="currentColor"><path d="M17 2H7C4.243 2 2 4.243 2 7v10c0 2.757 2.243 5 5 5h10c2.757 0 5-2.243 5-5V7c0-2.757-2.243-5-5-5zm3 15c0 1.654-1.346 3-3 3H7c-1.654 0-3-1.346-3-3V7c0-1.654 1.346-3 3-3h10c1.654 0 3 1.346 3 3v10zM12 7c-2.757 0-5 2.243-5 5s2.243 5 5 5 5-2.243 5-5-2.243-5-5-5zm0 8c-1.654 0-3-1.346-3-3s1.346-3 3-3 3 1.346 3 3-1.346 3-3 3z"/></svg>
+                </a>
+                <a href="#" class="hover:text-accent transition duration-300">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.477 2 2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.873V14.89h-2.91v-2.89h2.91v-2.26c0-2.87 1.754-4.444 4.304-4.444 1.243 0 2.313.092 2.622.134v2.792h-1.643c-1.282 0-1.534.613-1.534 1.51v1.986h3.13l-.508 2.89h-2.622v6.983C18.343 21.128 22 16.991 22 12c0-5.523-4.477-10-10-10z"/></svg>
+                </a>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

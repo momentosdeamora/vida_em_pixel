@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="pt-br" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pagamento - Vida em Pixel</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <style>
+    :root {
+      --color-primary: #00C49A;
+      --color-secondary: #4DBCE9;
+      --color-accent: #FFD700;
+      --color-text-main: #05b48e;
+      --color-text-light: #009bd8;
+      --color-background-light: #E0FFF8;
+      --color-background-white: #FFFFFF;
+    }
+    body {
+      font-family: 'Inter', sans-serif;
+      background-color: var(--color-background-light);
+      color: var(--color-text-light);
+    }
+    .bg-primary { background-color: var(--color-primary); }
+    .text-primary { color: var(--color-primary); }
+    .text-gradient-logo {
+    background-image: linear-gradient(to right, var(--color-primary), var(--color-secondary));
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+        }
+  </style>
+</head>
+
+<body class="antialiased min-h-screen flex flex-col">
+
+  <!-- Header -->
+  <header style="background-color: var(--color-background-light);" class="shadow-md p-4 sm:p-6 lg:p-8 sticky top-0 z-50">
+    <nav class="container mx-auto flex justify-between items-center flex-wrap">
+      <a href="index.html#inicio" class="flex items-center space-x-2 font-bold text-2xl text-primary">
+        <img src="./imagens/logotipo_fundo_transparente.png" alt="Robô pixelizado segurando uma planta" class="h-20 w-20">
+        <span class="text-gradient-logo">Vida em Pixel</span>
+      </a>
+      <div class="hidden md:flex space-x-8 lg:space-x-12">
+        <a href="index.html#kits" class="text-text-light hover:text-primary transition duration-300">Nossos Kits</a>
+        <a href="index.html#missoes" class="text-text-light hover:text-secondary transition duration-300">Missões Incríveis</a>
+        <a href="index.html#diferencial" class="text-text-light hover:text-tertiary transition duration-300">Super Poderes</a>
+        <a href="index.html#fundadores" class="text-text-light hover:text-quaternary transition duration-300">Nossos Guardiões</a>
+        <a href="index.html#depoimentos" class="text-text-light hover:text-primary transition duration-300">O que dizem sobre nós?</a>
+        <a href="index.html#contato" class="text-text-light hover:text-primary transition duration-300">Fale Conosco</a>
+      </div>
+      <a href="index.html#cta" class="bg-primary text-white font-semibold py-2 px-6 rounded-full shadow-lg hover:bg-emerald-700 transition duration-300 hidden md:block">Pegar meu Kit!</a>
+    </nav>
+  </header>
+
+  <!-- Checkout -->
+  <main class="flex-grow flex items-center justify-center p-6">
+    <div class="bg-background-white p-8 rounded-lg shadow-xl max-w-lg w-full">
+      <h1 class="text-3xl font-bold text-center mb-6" style="color: var(--color-text-main);">Finalizar Compra</h1>
+
+      <!-- Produto -->
+      <div id="detalhes-produto" class="mb-6 border-b pb-4">
+        <h2 class="text-xl font-semibold text-text-main">Produto: <span id="nome-produto">Kit Floresta Amazônica</span></h2>
+        <p class="text-lg text-primary font-bold">Valor unitário: <span id="valor-produto">R$ 149,90</span></p>
+
+        <!-- Quantidade + Preço total -->
+        <div class="flex items-center mt-4 space-x-4">
+          <div class="flex items-center">
+            <button type="button" onclick="alterarQtd(-1)" class="px-3 py-1 bg-gray-200 rounded-l-lg">-</button>
+            <input type="number" id="quantidade" value="1" min="1" class="w-16 text-center border-t border-b">
+            <button type="button" onclick="alterarQtd(1)" class="px-3 py-1 bg-gray-200 rounded-r-lg">+</button>
+          </div>
+          <p class="text-lg font-semibold">Subtotal: <span id="subtotal-inline">R$ 149,90</span></p>
+        </div>
+      </div>
+
+      <!-- CEP / Frete -->
+      <div class="mb-6">
+        <label for="cep" class="block text-text-main font-semibold mb-2">CEP</label>
+        <div class="flex space-x-2">
+          <input type="text" id="cep" name="cep" placeholder="00000-000" class="flex-grow px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-primary">
+          <button type="button" onclick="calcularFrete()" class="bg-primary text-white px-4 rounded-lg shadow hover:bg-emerald-700">Calcular</button>
+        </div>
+        <p id="prazo-entrega" class="mt-2 text-sm text-gray-600 hidden"></p>
+      </div>
+
+      <!-- Forma de pagamento -->
+      <div class="mb-6">
+        <p class="text-text-main font-semibold mb-2">Forma de pagamento</p>
+        <div class="space-y-2">
+          <label class="flex items-center space-x-2">
+            <i data-lucide="credit-card" class="w-5 h-5 text-primary"></i>
+            <input type="radio" name="pagamento" value="cartao" checked>
+            <span>Cartão de Crédito</span>
+          </label>
+          <label class="flex items-center space-x-2">
+            <i data-lucide="smartphone" class="w-5 h-5 text-green-500"></i>
+            <input type="radio" name="pagamento" value="pix">
+            <span>Pix</span>
+          </label>
+          <label class="flex items-center space-x-2">
+            <i data-lucide="file-text" class="w-5 h-5 text-yellow-500"></i>
+            <input type="radio" name="pagamento" value="boleto">
+            <span>Boleto Bancário</span>
+          </label>
+        </div>
+      </div>
+
+      <!-- Campos do cartão -->
+      <form action="/api/pagamento" method="POST" class="space-y-4">
+        <div>
+          <label for="nome-cartao" class="block text-text-main font-semibold mb-2">Nome no Cartão</label>
+          <input type="text" id="nome-cartao" name="nome-cartao" class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-primary">
+        </div>
+        <div>
+          <label for="numero-cartao" class="block text-text-main font-semibold mb-2">Número do Cartão</label>
+          <input type="text" id="numero-cartao" name="numero-cartao" class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-primary">
+        </div>
+        <div class="grid grid-cols-2 gap-4">
+          <div>
+            <label for="validade" class="block text-text-main font-semibold mb-2">Validade (MM/AA)</label>
+            <input type="text" id="validade" name="validade" class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-primary">
+          </div>
+          <div>
+            <label for="cvv" class="block text-text-main font-semibold mb-2">CVV</label>
+            <input type="text" id="cvv" name="cvv" class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-primary">
+          </div>
+        </div>
+
+        <!-- Resumo -->
+        <div class="mt-6 border-t pt-4 space-y-2 text-lg">
+          <p>Subtotal: <span id="subtotal">R$ 149,90</span></p>
+          <p>Frete: <span id="frete">R$ 0,00</span></p>
+          <p class="font-bold text-primary">Total: <span id="total">R$ 149,90</span></p>
+        </div>
+
+        <!-- Botões -->
+        <div class="space-y-3 mt-6">
+          <button type="submit" class="w-full bg-primary text-white font-bold py-3 rounded-full shadow-lg hover:bg-emerald-700 transition duration-300">Pagar Agora</button>
+          <a href="index.html" class="block w-full text-center bg-gray-300 text-gray-700 font-semibold py-3 rounded-full shadow hover:bg-gray-400 transition duration-300">Cancelar</a>
+          <a href="index.html#kits" class="block w-full text-center bg-emerald-100 text-emerald-700 font-semibold py-3 rounded-full shadow hover:bg-emerald-200 transition duration-300">Adicionar mais itens</a>
+        </div>
+      </form>
+    </div>
+  </main>
+
+<script>
+  // Lê os parâmetros da URL
+  const params = new URLSearchParams(window.location.search);
+  const nomeProduto = params.get("nome") || "Kit Floresta Amazônica";
+  const precoProduto = parseFloat(params.get("preco")) || 149.90;
+
+  // Atualiza os elementos na página
+  document.getElementById("nome-produto").textContent = nomeProduto;
+  document.getElementById("valor-produto").textContent = "R$ " + precoProduto.toFixed(2).replace(".", ",");
+
+  // Atualiza a lógica de preços
+  const precoUnitario = precoProduto;
+  let frete = 0;
+
+  function alterarQtd(delta) {
+    const input = document.getElementById("quantidade");
+    let qtd = parseInt(input.value) + delta;
+    if (qtd < 1) qtd = 1;
+    input.value = qtd;
+    atualizarResumo();
+  }
+
+  function atualizarResumo() {
+    const qtd = parseInt(document.getElementById("quantidade").value);
+    const subtotal = precoUnitario * qtd;
+    document.getElementById("subtotal").textContent = "R$ " + subtotal.toFixed(2).replace(".", ",");
+    document.getElementById("subtotal-inline").textContent = "R$ " + subtotal.toFixed(2).replace(".", ",");
+    const total = subtotal + frete;
+    document.getElementById("total").textContent = "R$ " + total.toFixed(2).replace(".", ",");
+  }
+
+  function calcularFrete() {
+    const cep = document.getElementById("cep").value.trim();
+    if (cep !== "") {
+      frete = 5.00;
+      const prazo = Math.floor(Math.random() * 5) + 3; // 3 a 7 dias
+      document.getElementById("frete").textContent = "R$ " + frete.toFixed(2).replace(".", ",");
+      document.getElementById("prazo-entrega").textContent = "Prazo de entrega estimado: " + prazo + " dias úteis";
+      document.getElementById("prazo-entrega").classList.remove("hidden");
+    } else {
+      frete = 0;
+      document.getElementById("frete").textContent = "R$ 0,00";
+      document.getElementById("prazo-entrega").classList.add("hidden");
+    }
+    atualizarResumo();
+  }
+
+  atualizarResumo();
+</script>
+</body>
+</html>
