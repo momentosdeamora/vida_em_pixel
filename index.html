@@ -70,6 +70,9 @@
         .bg-amazonas { background-color: var(--color-amazonas); }
         .border-amazonas { border-color: var(--color-amazonas); }
 
+        .bg-solar {background-color: #FFD447;}
+        .border-solar {border-color: #FFD447;}
+
         .text-cerrado { color: var(--color-cerrado); }
         .bg-cerrado { background-color: var(--color-cerrado); }
         .border-cerrado { border-color: var(--color-cerrado); }
@@ -271,34 +274,74 @@
     </section>
 
     <section id="fundadores" class="py-16 sm:py-24" style="background-color: var(--color-background-neutral);">
-        <div class="container mx-auto px-4 text-center">
-            <h2 class="text-3xl sm:text-4xl lg:text-5xl font-bold mb-12" style="color: var(--color-text-main);">Nossos Guardiões da Natureza</h2>
-            <p class="text-lg mb-12 max-w-3xl mx-auto" style="color: var(--color-text-light);">Conheça a equipe por trás da Vida em Pixel, apaixonada por educação, tecnologia e, acima de tudo, pela sustentabilidade e preservação do nosso planeta.</p>
-            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-12">
-                <div class="bg-background-white rounded-lg shadow-xl p-8 transform hover:scale-105 transition duration-300">
-                    <img src="https://placehold.co/150x150/00C49A/fff?text=Fundadora+1" alt="Foto do Fundadora 1" class="rounded-full w-36 h-36 mx-auto mb-4 object-cover border-4 border-amazonas">
-                    <h3 class="text-2xl font-bold mb-2" style="color: var(--color-text-main);">Alanis Urquisa Dias Moreira</h3>
-                    <p class="text-tertiary font-semibold mb-2">Exploradora Chefe & Visionária</p>
-                    <p style="color: var(--color-text-light);">Sua paixão por ciência de dados e IA se conecta à educação, tornando a tecnologia acessível a todos. Atua como voluntária em iniciativas extensionistas, desenvolvedora python e pesquisadora científica, levando conhecimento de forma prática e transformadora.</p></div>
-                <div class="bg-background-white rounded-lg shadow-xl p-8 transform hover:scale-105 transition duration-300">
-                    <img src="https://placehold.co/150x150/4DBCE9/fff?text=Fundadora+2" alt="Foto da Fundadora 2" class="rounded-full w-36 h-36 mx-auto mb-4 object-cover border-4 border-mata-atlantica">
-                    <h3 class="text-2xl font-bold mb-2" style="color: var(--color-text-main);">Maria Eduarda de Lima</h3>
-                    <p class="text-tertiary font-semibold mb-2">Mestra da Tecnologia</p>
-                    <p style="color: var(--color-text-light);">Com foco em ciência de dados e programação, ela desvenda a complexidade dos algoritmos com programação python. Seu interesse em tecnologia espacial mostra como a inovação pode alcançar novos horizontes.</p></div>
-                <div class="bg-background-white rounded-lg shadow-xl p-8 transform hover:scale-105 transition duration-300">
-                    <img src="https://placehold.co/150x150/FF8C42/fff?text=Fundador+3" alt="Foto do Fundador 3" class="rounded-full w-36 h-36 mx-auto mb-4 object-cover border-4 border-cerrado">
-                    <h3 class="text-2xl font-bold mb-2" style="color: var(--color-text-main);">Matheus Pereira Fortunato</h3>
-                    <p class="text-tertiary font-semibold mb-2">Arquiteto de Dados e Lógica</p>
-                    <p style="color: var(--color-text-light);">Ele é o alicerce matemático da equipe, dominando a lógica e a estatística que sustentam a ciência de dados. Sua expertise garante a precisão e a solidez de nossas soluções.</p>
-                </div>
-                <div class="bg-background-white rounded-lg shadow-xl p-8 transform hover:scale-105 transition duration-300">
-                    <img src="https://placehold.co/150x150/8A2BE2/fff?text=Fundador+4" alt="Foto da Fundador 4" class="rounded-full w-36 h-36 mx-auto mb-4 object-cover border-4 border-quaternary">
-                    <h3 class="text-2xl font-bold mb-2" style="color: var(--color-text-main);">Nicolas de Souza Ocampos</h3>
-                    <p class="text-quaternary font-semibold mb-2">Arquiteto de Sistemas e Soluções</p>
-                    <p style="color: var(--color-text-light);">Desenvolvedor de software, ele constrói as pontes tecnológicas que conectam as ideias às soluções.</p>
-                </div>
-            </div>
+    <div class="container mx-auto px-4 text-center">
+        <h2 class="text-3xl sm:text-4xl lg:text-5xl font-bold mb-12" style="color: var(--color-text-main);">
+        Nossos Guardiões da Natureza
+        </h2>
+        <p class="text-lg mb-12 max-w-3xl mx-auto" style="color: var(--color-text-light);">
+        Conheça a equipe por trás da Vida em Pixel, apaixonada por educação, tecnologia e, acima de tudo, pela sustentabilidade e preservação do nosso planeta.
+        </p>
+
+        <!-- GRID DE FUNDADORES -->
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-10 items-stretch">
+        
+        <!-- CARD 1 -->
+        <div class="bg-background-white rounded-xl shadow-xl p-8 transform hover:scale-105 transition duration-300 flex flex-col h-full">
+            <img src="https://placehold.co/150x150/00C49A/fff?text=Alanis" alt="Foto de Alanis"
+            class="rounded-full w-36 h-36 mx-auto mb-4 object-cover border-4 border-amazonas">
+            <h3 class="text-2xl font-bold mb-2" style="color: var(--color-text-main);">Alanis Urquisa Dias Moreira</h3>
+            <p class="text-tertiary font-semibold mb-2">Exploradora Chefe & Visionária</p>
+            <p style="color: var(--color-text-light);">
+            Sua paixão por ciência de dados e IA se conecta à educação, tornando a tecnologia acessível a todos. Atua como voluntária em iniciativas extensionistas, desenvolvedora Python e pesquisadora científica, levando conhecimento de forma prática e transformadora.
+            </p>
         </div>
+
+        <!-- CARD 2 -->
+        <div class="bg-background-white rounded-xl shadow-xl p-8 transform hover:scale-105 transition duration-300 flex flex-col h-full">
+            <img src="https://placehold.co/150x150/EAD94C/fff?text=Felipe" alt="Foto de Felipe"
+                class="rounded-full w-36 h-36 mx-auto mb-4 object-cover border-4 border-solar">
+            <h3 class="text-2xl font-bold mb-2" style="color: var(--color-text-main);">Felipe Akira Fukue</h3>
+            <p class="text-tertiary font-semibold mb-2">Engenheiro de Experiências Digitais</p>
+            <p style="color: var(--color-text-light);">
+                Especialista em desenvolvimento web e integração de interfaces, ele transforma conceitos em plataformas funcionais e envolventes. Conectando front-end, back-end e tecnologias imersivas.
+            </p>
+        </div>
+
+        <!-- CARD 3 -->
+        <div class="bg-background-white rounded-xl shadow-xl p-8 transform hover:scale-105 transition duration-300 flex flex-col h-full">
+            <img src="https://placehold.co/150x150/4DBCE9/fff?text=Maria Eduarda" alt="Foto de Maria Eduarda"
+            class="rounded-full w-36 h-36 mx-auto mb-4 object-cover border-4 border-mata-atlantica">
+            <h3 class="text-2xl font-bold mb-2" style="color: var(--color-text-main);">Maria Eduarda de Lima</h3>
+            <p class="text-tertiary font-semibold mb-2">Mestra da Tecnologia</p>
+            <p style="color: var(--color-text-light);">
+            Com foco em ciência de dados e programação, ela desvenda a complexidade dos algoritmos com programação Python. Seu interesse em tecnologia espacial mostra como a inovação pode alcançar novos horizontes.
+            </p>
+        </div>
+
+        <!-- CARD 4 -->
+        <div class="bg-background-white rounded-xl shadow-xl p-8 transform hover:scale-105 transition duration-300 flex flex-col h-full">
+            <img src="https://placehold.co/150x150/FF8C42/fff?text=Matheus" alt="Foto de Matheus"
+            class="rounded-full w-36 h-36 mx-auto mb-4 object-cover border-4 border-cerrado">
+            <h3 class="text-2xl font-bold mb-2" style="color: var(--color-text-main);">Matheus Pereira Fortunato</h3>
+            <p class="text-tertiary font-semibold mb-2">Arquiteto de Dados e Lógica</p>
+            <p style="color: var(--color-text-light);">
+            Ele é o alicerce matemático da equipe, dominando a lógica e a estatística que sustentam a ciência de dados. Sua expertise garante a precisão e a solidez de nossas soluções.
+            </p>
+        </div>
+
+        <!-- CARD 5 -->
+        <div class="bg-background-white rounded-xl shadow-xl p-8 transform hover:scale-105 transition duration-300 flex flex-col h-full">
+            <img src="https://placehold.co/150x150/8A2BE2/fff?text=Nicolas" alt="Foto de Nicolas"
+            class="rounded-full w-36 h-36 mx-auto mb-4 object-cover border-4 border-quaternary">
+            <h3 class="text-2xl font-bold mb-2" style="color: var(--color-text-main);">Nicolas de Souza Ocampos</h3>
+            <p class="text-quaternary font-semibold mb-2">Arquiteto de Sistemas e Soluções</p>
+            <p style="color: var(--color-text-light);">
+            Desenvolvedor de software, ele constrói as pontes tecnológicas que conectam as ideias às soluções.
+            </p>
+        </div>
+
+        </div>
+    </div>
     </section>
 
     <section id="depoimentos" class="bg-background-light py-16 sm:py-24">
