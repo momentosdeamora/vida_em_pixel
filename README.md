@@ -40,10 +40,14 @@ Nosso propósito é **transformar a curiosidade infantil em aprendizado ativo**,
 ## 🧑‍💻 Alunos
 
 **⁠[Alanis Urquisa](https://br.linkedin.com/in/alanis-urquisa)**
+
 **[Maria Eduarda](https://www.linkedin.com/in/maria-eduarda-538233231/)**
+
 **⁠[Matheus Pereira](https://br.linkedin.com/in/matheus-fortunato-720a56104)**
+
 **[Nicolas Ocampos](https://br.linkedin.com/in/nicolas-ocampos-10b7ba21a)**
-**Felipe Akira Fukue**
+
+**[Felipe Akira Fukue](https://www.linkedin.com/in/felipeakirafukue/)**
 
 ---
 
